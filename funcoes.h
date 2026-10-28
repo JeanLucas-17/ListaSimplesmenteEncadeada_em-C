@@ -1,5 +1,11 @@
 /*
-    AUTOR: JEAN LUCAS THOMAZELLI SILVA
+    AUTOR......: JEAN LUCAS THOMAZELLI SILVA
+    DATA.......: 24/10/2026
+
+    GRUPO......: JEAN LUCAS RA: 438971-2026
+                 FELIPE GABRIEL RA: 434906-2026
+
+    OBJETIVO...: DEFINIR TODAS AS ESTRUTURAS E ASSINATURAS DAS FUNCOES
 */
 
 #ifndef FUNCOES_H
@@ -9,6 +15,8 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
+#include <string.h>
+#include <ctype.h>
 
 typedef struct
 {
@@ -19,11 +27,10 @@ typedef struct
     char tipo_conta[20];
     double vl_saldo;
     double vl_limite;
-    char status[10];
+    int status;
 } regConta;
 
 typedef struct TipoItemConta *ApontConta;
-
 typedef struct TipoItemConta
 {
     regConta conteudo;
@@ -31,6 +38,12 @@ typedef struct TipoItemConta
     ApontConta ant;
     ApontConta prox;
 } TipoItemConta;
+
+typedef struct
+{
+    ApontConta pri;
+    ApontConta ult;
+} ListaDupla;
 
 typedef struct 
 {
@@ -52,10 +65,54 @@ typedef struct TipoItemMov
     ApontMov prox;
 } TipoItemMov;
 
+typedef struct
+{
+    ApontMov pri;
+    ApontMov ult;
+} ListaSimples;
+
 void gotoxy(int x, int Y);
+
+void telaCadastrar();
 
 void tela();
 
 void telaPrincipal();
+
+void menuConta(ListaDupla *D);
+
+void cadastrarConta(ListaDupla *D, int opcao);
+
+void telaConta();
+
+void limpaMensagem();
+
+ApontConta pesquisaCodigoConta(ListaDupla *D, int codigo);
+
+int quantidadeContas(ListaDupla *D);
+
+ApontConta posConta(ListaDupla *D, int pos);
+
+void consultaConta(ListaDupla *D, int opcao);
+
+void menuConsultaConta(ListaDupla *D);
+
+void telaConsulta();
+
+void mostraConta(regConta conta, int opcao, int y);
+
+void ordemCodigo(ListaDupla *D);
+
+void cabecalhoContas();
+
+void salvarDiscoConta(ListaDupla *D);
+
+void lerDiscoConta(ListaDupla *D);
+
+void ordemAlfabetica(ListaDupla *D);
+
+void erro();
+
+void alterarConta(ListaDupla *D);
 
 #endif

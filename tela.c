@@ -1,5 +1,11 @@
 /*
-    AUTOR: JEAN LUCAS THOMAZELLI SILVA
+    AUTOR......: JEAN LUCAS THOMAZELLI SILVA
+    DATA.......: 24/10/2026
+
+    GRUPO......: JEAN LUCAS RA: 438971-2026
+                 FELIPE GABRIEL RA: 434906-2026
+
+    OBJETIVO...: FUNCAO QUE CRIA O MOLDE DA TELA
 */
 
 #include "funcoes.h"
@@ -15,7 +21,7 @@ void tela()
     }
     printf("+");
 
-    printf("\n| UNICIVE         SISTEMA DE GESTAO DE FUNCIONARIO          ESTRUTURA DE DADOS |\n");
+    printf("\n| UNICIVE         SISTEMA DE GERENCIAMENTO BANCARIO         ESTRUTURA DE DADOS |\n");
     printf("|                                                                              |\n");
     printf("+");
     for (i = 0; i < 78; i++)
